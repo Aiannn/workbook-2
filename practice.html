@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" placeholder="Enter your text" value="" id="inputText" />
+    <button id="submit" onclick="showHelloMessage()">Submit</button>
+    <h1 id="headerText">Hello,</h1>
+    <script>
+      function showHelloMessage() {
+        let inputName = document.getElementById("inputText").value;
+        console.log(inputName);
+        // document.getElementsByTagName("h1")[0].innerText = inputName;
+        let headerText = document.getElementById("headerText").innerText;
+        headerTextUpdated = headerText + inputName;
+        document.getElementById("headerText").innerText = headerTextUpdated;
+      }
+    </script>
+  </body>
+</html>

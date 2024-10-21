@@ -1,0 +1,186 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <label for="input">Number 1</label>
+    <input type="number" value="" id="firstNum" />
+
+    <br />
+    <br />
+
+    <button id="add" onclick="setOperator('+')">+</button>
+    <button id="substract" onclick="setOperator('-')">-</button>
+    <button id="multiply" onclick="setOperator('*')">*</button>
+    <button id="divide" onclick="setOperator('/')">/</button>
+    <br />
+    <br />
+    <button id="answerButton" onclick="calculate()">=</button>
+
+    <h3>Answer</h3>
+    <h3 id="answer"></h3>
+    <script>
+      let firstNum;
+      let operator;
+
+      function setOperator(op) {
+        firstNum = parseInt(document.getElementById("firstNum").value);
+        document.getElementById("firstNum").value = "";
+        operator = op;
+
+        console.log(firstNum);
+      }
+
+      function calculate() {
+        let secondNum = parseInt(document.getElementById("firstNum").value);
+
+        let answer;
+        let finalAnswer;
+        switch (operator) {
+          case "+":
+            answer = firstNum + secondNum;
+            break;
+          case "-":
+            answer = firstNum - secondNum;
+            break;
+          case "*":
+            answer = firstNum * secondNum;
+            break;
+          case "/":
+            answer = firstNum / secondNum;
+            break;
+        }
+
+        document.getElementById("answer").innerText = answer;
+        document.getElementById("firstNum").value = "";
+      }
+    </script>
+  </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <label for="input">Number 1</label>
+    <input type="number" value="" id="firstNum" />
+
+    <br />
+
+    <!-- <label for="input">Number 2</label>
+    <input type="number" value="" id="secondNum" /> -->
+
+    <br />
+
+    <button id="add" onclick="setOperator('+')">+</button>
+    <button id="substract" onclick="setOperator('-')">-</button>
+    <button id="multiply" onclick="setOperator('*')">*</button>
+    <button id="divide" onclick="setOperator('/')">/</button>
+    <br />
+    <br />
+    <button id="answerButton" onclick="calculate()">=</button>
+
+    <h3>Answer</h3>
+    <h3 id="answer"></h3>
+    <script>
+      let firstNum;
+      let firstNumOrFinalAnswer;
+      let operator;
+
+      function setOperator(op) {
+        if (firstNum == undefined) {
+          firstNum = parseInt(document.getElementById("firstNum").value);
+        } else {
+          firstNum;
+          // switch (operator) {
+          //   case "+":
+          //     document.getElementById("add").style.color = "green";
+          //     break;
+          //   case "-":
+          //     document.getElementById("add").style.color = "green";
+          //     break;
+          //   case "*":
+          //     document.getElementById("add").style.color = "green";
+          //     break;
+          //   case "/":
+          //     document.getElementById("add").style.color = "green";
+          //     break;
+          // }
+        }
+        document.getElementById("firstNum").value = "";
+        operator = op;
+
+        console.log(firstNum);
+      }
+
+      function calculate() {
+        let secondNum = parseInt(document.getElementById("firstNum").value);
+
+        let answer;
+        let finalAnswer;
+        switch (operator) {
+          case "+":
+            answer = firstNum + secondNum;
+            firstNum = answer;
+            break;
+          case "-":
+            answer = firstNum - secondNum;
+            firstNum = answer;
+            break;
+          case "*":
+            answer = firstNum * secondNum;
+            firstNum = answer;
+            break;
+          case "/":
+            answer = firstNum / secondNum;
+            firstNum = answer;
+            break;
+        }
+
+        // document.getElementById("answer").innerText = answer;
+        document.getElementById("firstNum").value = answer;
+        // document.getElementById("firstNum").value = "";
+        // document.getElementById(operator).style.color = "white";
+      }
+    </script>
+  </body>
+</html>
+
+<!-- --------- -->
+
+<!-- function () {
+  let initNumber = 0 
+
+  function calculate() {
+    let secondNum = parseInt(document.getElementById("inputField").value);
+
+    let answer;
+    switch (operator) {
+      case "+":
+        answer = initNumber + secondNum;
+        initNumber = answer;
+        break;
+      case "-":
+        answer = initNumber - secondNum;
+        initNumber = answer;
+        break;
+      case "*":
+        answer = initNumber * secondNum;
+        initNumber = answer;
+        break;
+      case "/":
+        answer = initNumber / secondNum;
+        initNumber = answer;
+        break;
+    }
+
+    // document.getElementById("answer").innerText = answer;
+  }
+} -->
